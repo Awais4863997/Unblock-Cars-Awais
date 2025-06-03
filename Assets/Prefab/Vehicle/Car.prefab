@@ -2544,8 +2544,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6576424, y: 0.59873766, z: 1.4665208}
-  m_Center: {x: -0.0037819445, y: 0.30588904, z: 0.09813285}
+  m_Size: {x: 0.6576424, y: 0.59873766, z: 1.4961028}
+  m_Center: {x: -0.0037819445, y: 0.30588904, z: 0.11292386}
 --- !u!114 &1609494892252953005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2559,12 +2559,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
-  overallSpeed: 4.36
+  overallSpeed: 8.36
   speed: 0.91
-  rotationSpeed: 143.1
-  minDistanceToTurn: 0.35
+  rotationSpeed: 120
+  minDistanceToTurn: 0.5
   isMoving: 0
-  playbackSpeed: 97.7
+  playbackSpeed: 97
 --- !u!95 &2466088933967305154
 Animator:
   serializedVersion: 5

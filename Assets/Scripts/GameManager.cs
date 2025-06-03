@@ -16,13 +16,18 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //CurrentLevelNo = PlayerPrefs.GetInt("CurrentLevelNo", 0) % _Levels.Length;
-        //CurrentLevel = Instantiate(_Levels[CurrentLevelNo]);
+        CurrentLevelNo = PlayerPrefs.GetInt("CurrentLevelNo", 0) % _Levels.Length;
+        CurrentLevel = Instantiate(_Levels[CurrentLevelNo]);
     }
 
     private void OnLevelWin()
     {
         print("----------YOU WIN!----------");
+
+        events.Publish("OnWinEffect");
+        events.Publish("OnWinSound");
+
+        PlayerPrefs.SetInt("CurrentLevelNo", PlayerPrefs.GetInt("CurrentLevelNo") + 1);
     }
 
    

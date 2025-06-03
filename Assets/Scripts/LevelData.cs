@@ -6,7 +6,7 @@ public class LevelData : MonoBehaviour
     private IEventHandler events;
 
     public List<Vehicle> CarsInLevel;
-    [HideInInspector] public int carsInitialCount;
+    int carsInitialCount;
     GameObject carEscaped;
 
     public Transform CamPos;
@@ -41,13 +41,14 @@ public class LevelData : MonoBehaviour
 
         if (CarsInLevel.Count <= 0)
         {
-            //coinsEarnedInCurrentLevel = carsInitialCount + 3;
             events.Publish("OnWin");
         }
 
+        events.Publish("OnEscapeEffect");
+        events.Publish("OnEscapeSound");
+
         Invoke(nameof(DestroyCar), 0.4f);
 
-        //OnCarEscape?.Invoke();
     }
 
     void DestroyCar()

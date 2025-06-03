@@ -274,7 +274,7 @@ public class Vehicle : MonoBehaviour, ITouchable
 
             isrecording = false;
 
-            Invoke(nameof(Reset), 0.5f);
+            Invoke(nameof(Reset), 0.2f);
 
             frameIndex = positionHistory.Count - 1;
         }

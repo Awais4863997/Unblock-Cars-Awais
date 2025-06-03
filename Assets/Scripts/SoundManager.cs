@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioClip moveClip, winClip;
+    public AudioClip moveClip, winClip, escapeClip;
     private AudioSource src;
 
     private IEventHandler events;
@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
 
         events.Subscribe("OnWinSound", PlayWinSound);
         events.Subscribe("OnMoveSound", PlayMoveSound);
+        events.Subscribe("OnEscapeSound", PlayCarEscapeSound);
     }
 
     private void PlayMoveSound()
@@ -29,4 +30,9 @@ public class SoundManager : MonoBehaviour
         src.PlayOneShot(winClip);
     }
 
+    private void PlayCarEscapeSound()
+    {
+        print("----------Play Escape Sound----------");
+        src.PlayOneShot(escapeClip);
+    }
 }
